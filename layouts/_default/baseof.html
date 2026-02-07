@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-color: #1d1f21;
+            --text-color: #c9cacc;
+            --accent-color: #99cc99;
+            --secondary-color: #f2777a;
+            --border-color: #515151;
+        }
+        
+        body {
+            font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 16px;
+            font-size: 1.1rem;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+        }
+        
+        header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            header {
+                margin-bottom: 80px;
+            }
+        }
+        
+        h1.site-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        @media (min-width: 768px) {
+            h1.site-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .site-description {
+            font-size: 0.9rem;
+            color: #8a8a8a;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 768px) {
+            .site-description {
+                font-size: 0.95rem;
+            }
+        }
+        
+        nav {
+            margin: 25px 0;
+        }
+        
+        @media (min-width: 768px) {
+            nav {
+                margin: 30px 0;
+            }
+        }
+        
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        @media (min-width: 768px) {
+            nav a {
+                margin: 0 15px;
+            }
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* 一覧ページ用のカード型スタイル */
+        .posts article {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background-color: var(--bg-color);
+        }
+        
+        @media (min-width: 768px) {
+            .posts article {
+                padding: 30px;
+                margin-bottom: 40px;
+            }
+        }
+        
+        .posts article:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 記事ページ用のスタイル */
+        article {
+            margin-bottom: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            article {
+                margin-bottom: 60px;
+            }
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+        
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        h2 a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        h2 a:hover {
+            color: var(--accent-color);
+        }
+        
+        .meta {
+            font-size: 0.85rem;
+            color: #8a8a8a;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            font-size: 1.05rem;
+            line-height: 2.0;
+        }
+        
+        @media (min-width: 768px) {
+            .content {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .content p {
+            margin-bottom: 1.8rem;
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 0;
+            margin-top: 10px;
+            min-height: 44px;
+            line-height: 1.5;
+        }
+        
+        /* 記事ページのhr区切り */
+        article hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid var(--border-color);
+            opacity: 0.5;
+        }
+        
+        /* 投げ銭セクション */
+        .donate-section {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .donate-section p {
+            font-style: italic;
+            color: #8a8a8a;
+            margin-bottom: 15px;
+        }
+        
+        .donate-section p:first-child {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            font-style: normal;
+        }
+        
+        .donate-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            min-height: 44px;
+            line-height: 1.5;
+        }
+        
+        .donate-button:hover {
+            background-color: #ff9999;
+            text-decoration: none;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #8a8a8a;
+        }
+        
+        @media (min-width: 768px) {
+            footer {
+                margin-top: 80px;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">{{ .Site.Title }}</h1>
+        <p class="site-description">{{ .Site.Params.description }}</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/posts">Archives</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    <footer>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+    </footer>
+</body>
+</html>

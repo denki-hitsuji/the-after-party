@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="posts">
+    {{ range .Site.RegularPages }}
+    <article>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="meta">{{ .Date.Format "2006年1月2日" }}</div>
+        <div class="content">
+            {{ .Summary }}
+        </div>
+        <a href="{{ .RelPermalink }}" class="read-more">続きを読む →</a>
+    </article>
+    {{ end }}
+</div>
+{{ end }}

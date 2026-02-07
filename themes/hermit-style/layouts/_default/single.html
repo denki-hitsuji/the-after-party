@@ -1,0 +1,43 @@
+{{ define "main" }}
+<style>
+/* 記事ページ専用のスタイル */
+article hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    opacity: 0.5;
+}
+
+.donate-section {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.donate-section p {
+    font-style: italic;
+    color: #8a8a8a;
+    margin-bottom: 15px;
+}
+
+.donate-section p:first-child {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    font-style: normal;
+}
+</style>
+
+<article>
+    <h2>{{ .Title }}</h2>
+    <div class="meta">{{ .Date.Format "2006年1月2日" }} • {{ .Params.musician }}</div>
+    <div class="content">
+        {{ .Content }}
+    </div>
+    
+    <div class="donate-section">
+        <p>この取材が面白かったら、{{ .Params.musician }}さんに一杯おごりませんか？</p>
+        <p>投げ銭していただいたお金は、取材を受けてくれたミュージシャンが後から好きなお酒を楽しむために使われます。</p>
+        <a href="#" class="donate-button">投げ銭する（準備中）</a>
+    </div>
+</article>
+{{ end }}

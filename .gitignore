@@ -1,0 +1,45 @@
+# Hugo build output
+public/
+resources/
+
+# Hugo cache
+.hugo_build.lock
+
+# Hugo generated resources
+resources/_gen/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Node modules (if using npm/yarn)
+node_modules/
+
+# Windows
+Thumbs.db
+
+# Backup files
+*.bak
+
+# Environment files
+.env
+.env.*
+
+# Hugo server files
+hugo_stats.json
+
+# Ignore themes if downloaded separately (optional)
+themes/*
+!themes/hermit-style/
