@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    {{ partial "header.html" . }}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-color: #1d1f21;
             --text-color: #c9cacc;
             --accent-color: #99cc99;
             --secondary-color: #f2777a;
@@ -69,6 +77,16 @@
         
         nav {
             margin: 25px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+        nav li {
+            display: inline;
+            margin: 0 12px;
         }
         
         @media (min-width: 768px) {
@@ -253,15 +271,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="site-title">{{ .Site.Title }}</h1>
-        <p class="site-description">{{ .Site.Params.description }}</p>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/posts">Archives</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
+    {{ partial "header.html" . }}
     
     <main>
         {{ block "main" . }}{{ end }}
