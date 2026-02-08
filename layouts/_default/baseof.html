@@ -4,15 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --bg-color: #1d1f21;
+    {{ partial "header.html" . }}
             --text-color: #c9cacc;
             --accent-color: #99cc99;
             --secondary-color: #f2777a;
