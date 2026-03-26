@@ -170,7 +170,10 @@
         h2 a:hover {
             color: var(--accent-color);
         }
-        
+       img {
+            max-width: 100%;
+            height: auto;
+        } 
         .meta {
             font-size: 0.85rem;
             color: #8a8a8a;
@@ -280,5 +283,51 @@
     <footer>
         <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
     </footer>
-</body>
-</html>
+    <style>
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .lightbox-overlay.active {
+            display: flex;
+        }
+    
+        .lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+    </style>
+    
+    <div class="lightbox-overlay" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+    
+    <script>
+        const overlay = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.content img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                overlay.classList.add('active');
+            });
+        });
+
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+        });
+    </script>
+    </body>
+    
+    </html>
