@@ -3,7 +3,7 @@ title: "ギタリスト・田中太郎が語る、音楽と日常のグルーヴ
 date: 2026-01-15T20:30:00+09:00
 musician: "田中太郎"
 band: "The Groove Makers"
-draft: false
+draft: true
 ---
 
 「打ち上げって、ライブの延長戦みたいなもんですよね」
