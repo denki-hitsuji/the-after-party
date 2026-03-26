@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "HUGO_BASEURL": "https://the-after-party-git-draft-satrex-jp.vercel.app/",
+      "HUGO_VERSION": "0.128.0"
+    }
+  }
+}
