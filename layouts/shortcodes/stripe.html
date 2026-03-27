@@ -1,0 +1,9 @@
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+  buy-button-id='{{ .Get "button_id" }}'
+  publishable-key='{{ .Site.Params.stripeKey }}'
+>
+</stripe-buy-button>

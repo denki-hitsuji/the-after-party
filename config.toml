@@ -5,3 +5,4 @@ theme = 'hermit-style'
 
 [params]
 description = 'ライブの打ち上げに、こっそり同席する感覚。ミュージシャンの本音が聞こえる特等席へ、ようこそ。'
+stripeKey = 'pk_live_51SyYBH3ghjjDhalOGBJ6A9eeqRzpsYJb4ZodbM6308KU4RHtUh14fbMWZE5cBzNZTDyR4t6WyD1wiruGbGS3Ytwr00fMiO6BWd'

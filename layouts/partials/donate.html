@@ -1,0 +1,12 @@
+<div class="donate-section">
+    <p>この取材が面白かったら、{{ .Params.musician }}さんに一杯おごりませんか？</p>
+    <p>投げ銭していただいたお金は、取材を受けてくれたミュージシャンが後から好きなお酒やお茶を楽しむために使われます。</p>
+    <div style="text-align: center;">
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    <stripe-buy-button
+        buy-button-id="{{ .Params.donate_button_id }}"
+        publishable-key="{{ .Site.Params.stripeKey }}"
+    >
+    </stripe-buy-button>
+    </div>
+</div>

@@ -33,11 +33,8 @@ article hr {
     <div class="content">
         {{ .Content }}
     </div>
-    
-    <div class="donate-section">
-        <p>この取材が面白かったら、{{ .Params.musician }}さんに一杯おごりませんか？</p>
-        <p>投げ銭していただいたお金は、取材を受けてくれたミュージシャンが後から好きなお酒を楽しむために使われます。</p>
-        <a href="#" class="donate-button">投げ銭する（準備中）</a>
-    </div>
+    {{ if .Params.donate_button_id }}
+        {{ partial "donate.html" . }}
+    {{ end }}
 </article>
 {{ end }}
