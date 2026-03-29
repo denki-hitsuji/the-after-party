@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }}</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
+      background-color: #1d1f21;
+      color: #c9cacc;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .thanks-wrap {
+      text-align: center;
+      max-width: 500px;
+    }
+    .thanks-wrap p { line-height: 1.8; }
+    .thanks-wrap em {
+      font-size: 0.9rem;
+      color: #8a8a8a;
+      display: block;
+      margin-top: 20px;
+    }
+    .redirect-note {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #515151;
+    }
+  </style>
+</head>
+<body>
+  <div class="thanks-wrap">
+    <p style="font-size: 2rem; margin-bottom: 30px;">🫶</p>
+    {{ .Content }}
+    <p class="redirect-note">{{ .Params.redirect_seconds }}秒後にアンナさんのページへ移動します...</p>
+  </div>
+
+<script>
+  const redirectUrl = "{{ .Params.redirect }}";
+  const redirectSeconds = parseInt("{{ .Params.redirect_seconds }}", 10);
+  setTimeout(() => {
+    window.location.href = redirectUrl;
+  }, redirectSeconds * 1000);
+</script>
+</body>
+</html>
