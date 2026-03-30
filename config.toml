@@ -2,6 +2,7 @@ baseURL = 'https://magazine.soundwalk.net/'
 languageCode = 'ja'
 title = 'The After Party'
 theme = 'hermit-style'
+googleAnalytics = "G-DV2CGQPDTL"
 
 [params]
 description = 'ライブの打ち上げに、こっそり同席する感覚。ミュージシャンの本音が聞こえる特等席へ、ようこそ。'
