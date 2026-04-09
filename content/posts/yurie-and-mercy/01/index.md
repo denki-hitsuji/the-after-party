@@ -7,8 +7,7 @@ donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
 
-![yurie♪&マーシー](photo.jpg)
-
+![yurie♪&マーシー](ym01.png)
 **yurie♪：** マーシーがポテチとかでいいって言ったんだけど。いや、飲むならやっぱナッツとチータラと茎わかめっしょ。
 
 **さとレックス（以下さとレ）：** ライブハウスだと、やっぱり人の演奏聴いてたりするし、あんまりゆっくり喋るっていう感じじゃないもんね。

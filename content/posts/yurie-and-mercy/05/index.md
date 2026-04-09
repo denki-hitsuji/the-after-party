@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
 
-![yurie♪&マーシー](photo.jpg)
+![yurie♪&マーシー](ym05.png)
 
 休憩を挟んで、テーブルの上が賑やかになってきた。話はベースの機材から始まった。
 

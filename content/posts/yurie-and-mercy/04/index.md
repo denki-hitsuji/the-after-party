@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
 
-![yurie♪&マーシー](photo.jpg)
+![yurie♪&マーシー](ym04.png)
 
 **さとレックス（以下さとレ）：** マーシーの半生をまとめたら、面白い冒険活劇ができそうな気がしますよね。
 

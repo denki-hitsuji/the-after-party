@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
 
-![yurie♪&マーシー](photo.jpg)
+![yurie♪&マーシー](ym02.png)
 
 **さとレックス（以下さとレ）：** yurie♪さんから見て、マーシーの譜面が綺麗っていうのが魅力だったんですか？
 

@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
 
-![yurie♪&マーシー](photo.jpg)
+![yurie♪&マーシー](ym03.png)
 
 **マーシー（以下マーシー）：** 彼女が「音大卒で声楽・オペラ」と言われた時に、「キャリアがこんなに違うのに俺でいいの？」とは思いました。
 
