@@ -1,8 +1,6 @@
 ---
 title: "ありがとうございます"
 layout: "thanks"
-redirect: "https://x.com/"
-redirect_seconds: 5
 _build:
   list: never
 ---
