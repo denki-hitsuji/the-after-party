@@ -1,0 +1,120 @@
+{{ define "main" }}
+{{ $slug := .Params.slug | default .File.BaseFileName }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $related := where $posts "Params.musicians" "intersect" (slice $slug) }}
+{{ $articles := sort $related "Date" "desc" }}
+
+<style>
+.musician-profile {
+    margin-bottom: 60px;
+}
+
+.musician-description {
+    color: var(--text-sub-color);
+    font-size: 1rem;
+    line-height: 1.9;
+    margin: 24px 0 0;
+}
+
+.musician-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin: 22px 0 0;
+    color: var(--text-muted-color);
+    font-size: 0.88rem;
+}
+
+.musician-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.musician-articles {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.musician-articles h3 {
+    color: var(--text-color);
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.45;
+    margin: 0 0 26px;
+}
+
+.musician-article {
+    padding: 18px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.musician-article:last-child {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.musician-article-date {
+    color: var(--text-muted-color);
+    font-size: 0.82rem;
+    margin: 0 0 6px;
+}
+
+.musician-article-title {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+.musician-article-title a {
+    color: var(--text-color);
+}
+
+.musician-article-title a:hover {
+    color: var(--accent-color);
+}
+
+.musician-article-summary {
+    color: var(--text-sub-color);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 12px 0 0;
+}
+
+.musician-empty {
+    color: var(--text-muted-color);
+    font-size: 0.95rem;
+}
+</style>
+
+<article class="musician-profile">
+    <h2>{{ .Title }}</h2>
+
+    <div class="musician-meta">
+        {{ with .Params.act }}<span>{{ . }}</span>{{ end }}
+        {{ with index .Params "role" }}<span>{{ . }}</span>{{ end }}
+        {{ with .Params.area }}<span>{{ . }}</span>{{ end }}
+    </div>
+
+    {{ with .Params.description }}
+        <p class="musician-description">{{ . }}</p>
+    {{ end }}
+
+    <section class="musician-articles" aria-labelledby="musician-articles-title">
+        <h3 id="musician-articles-title">掲載記事</h3>
+        {{ if $articles }}
+            {{ range $articles }}
+                <article class="musician-article">
+                    <p class="musician-article-date">{{ .Date.Format "2006年1月2日" }}</p>
+                    <h4 class="musician-article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                    {{ with .Summary }}
+                        <p class="musician-article-summary">{{ . | plainify | truncate 120 }}</p>
+                    {{ end }}
+                </article>
+            {{ end }}
+        {{ else }}
+            <p class="musician-empty">掲載記事はまだありません。</p>
+        {{ end }}
+    </section>
+</article>
+{{ end }}

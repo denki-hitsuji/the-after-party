@@ -3,6 +3,8 @@ title: "アンナ・マレェ ｜ 第2話：はじまりの話"
 date: 2026-03-25T20:30:00+09:00
 musician: "アンナ・マレェ"
 band: "アンナ・マレェ"
+musicians:
+  - "anna-mareh"
 donate_button_id: "buy_btn_1TFf9V3ghjjDhalOm9X4bcnP"
 draft: false
 ---

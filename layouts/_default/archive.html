@@ -83,6 +83,14 @@
     margin: 0 0 8px;
 }
 
+.archive-person h4 a {
+    color: var(--text-color);
+}
+
+.archive-person h4 a:hover {
+    color: var(--accent-color);
+}
+
 .archive-person-meta {
     color: var(--text-muted-color);
     font-size: 0.86rem;
@@ -179,7 +187,13 @@
             <div class="archive-people">
                 {{ range $people }}
                     <div class="archive-person">
-                        <h4>{{ .name }}</h4>
+                        <h4>
+                            {{ if .url }}
+                                <a href="{{ .url | relURL }}">{{ .name }}</a>
+                            {{ else }}
+                                {{ .name }}
+                            {{ end }}
+                        </h4>
                         {{ $meta := slice }}
                         {{ with .act }}{{ $meta = $meta | append . }}{{ end }}
                         {{ with index . "role" }}{{ $meta = $meta | append . }}{{ end }}
