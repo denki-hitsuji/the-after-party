@@ -1,0 +1,649 @@
+{{ define "title" }}THE AFTER PARTY | QR Flyer{{ end }}
+
+{{ define "main" }}
+<style>
+  :root {
+    --flyer-bg: #0e0e0c;
+    --flyer-surface: #171714;
+    --flyer-surface-subtle: #12120f;
+    --flyer-text-main: #e8e1d5;
+    --flyer-text-sub: #a9a092;
+    --flyer-text-muted: #746e64;
+    --flyer-border: #2b2924;
+    --flyer-accent: #b89a5e;
+    --flyer-accent-sub: #a56a43;
+  }
+
+  body {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: var(--flyer-bg);
+    color: var(--flyer-text-main);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Iowan Old Style", "Palatino Linotype", serif;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  body > header,
+  body > footer {
+    display: none;
+  }
+
+  body > main {
+    width: 100%;
+  }
+
+  .flyer-page {
+    min-height: 100vh;
+    background:
+      linear-gradient(180deg, rgba(184, 154, 94, 0.035), rgba(14, 14, 12, 0) 420px),
+      var(--flyer-bg);
+  }
+
+  .flyer-shell {
+    width: min(100%, 880px);
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+  }
+
+  @keyframes flyerFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .flyer-fade {
+    opacity: 0;
+    animation: flyerFadeUp 0.8s ease forwards;
+  }
+
+  .flyer-fade-1 {
+    animation-delay: 0.1s;
+  }
+
+  .flyer-fade-2 {
+    animation-delay: 0.25s;
+  }
+
+  .flyer-fade-3 {
+    animation-delay: 0.4s;
+  }
+
+  .flyer-fade-4 {
+    animation-delay: 0.55s;
+  }
+
+  .flyer-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+
+  .flyer-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .flyer-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 0 28px;
+    border-bottom: 1px solid var(--flyer-border);
+  }
+
+  .flyer-brand {
+    color: var(--flyer-text-main);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-decoration: none;
+    letter-spacing: 0.14em;
+  }
+
+  .flyer-tagline,
+  .flyer-label,
+  .flyer-meta,
+  .flyer-card-kicker {
+    color: var(--flyer-text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .flyer-tagline {
+    text-align: right;
+  }
+
+  .flyer-section {
+    padding: 88px 0;
+    border-bottom: 1px solid var(--flyer-border);
+  }
+
+  .flyer-hero {
+    padding-top: 82px;
+  }
+
+  .flyer-label {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--flyer-accent);
+  }
+
+  .flyer-hero-title,
+  .flyer-section-title,
+  .flyer-story-title {
+    margin: 0;
+    color: var(--flyer-text-main);
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .flyer-hero-title {
+    max-width: 760px;
+    font-size: 2.65rem;
+    line-height: 1.35;
+  }
+
+  .flyer-lead {
+    max-width: 620px;
+    margin: 28px 0 0;
+    color: var(--flyer-text-sub);
+    font-size: 1rem;
+    line-height: 1.95;
+  }
+
+  .flyer-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 34px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid rgba(184, 154, 94, 0.72);
+    color: var(--flyer-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+
+  .flyer-button:hover,
+  .flyer-link:hover {
+    color: var(--flyer-accent);
+    text-decoration: none;
+  }
+
+  .flyer-featured {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 36px;
+    align-items: stretch;
+    padding: 22px;
+    border: 1px solid var(--flyer-border);
+    border-radius: 6px;
+    background: var(--flyer-surface-subtle);
+  }
+
+  .flyer-featured-image {
+    min-height: 360px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--flyer-surface);
+  }
+
+  .flyer-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.72) brightness(0.78);
+  }
+
+  .flyer-featured-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px 8px 28px 0;
+  }
+
+  .flyer-story-title {
+    margin-top: 14px;
+    font-size: 2.35rem;
+    line-height: 1.42;
+  }
+
+  .flyer-story-copy {
+    margin: 28px 0 0;
+    color: var(--flyer-text-sub);
+  }
+
+  .flyer-story-copy p {
+    margin: 0 0 1.15rem;
+  }
+
+  .flyer-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-top: 28px;
+  }
+
+  .flyer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 34px;
+  }
+
+  .flyer-card {
+    display: flex;
+    min-height: 280px;
+    flex-direction: column;
+    padding: 22px;
+    border: 1px solid var(--flyer-border);
+    border-radius: 6px;
+    background: rgba(23, 23, 20, 0.64);
+    color: var(--flyer-text-main);
+    text-decoration: none;
+  }
+
+  .flyer-card:hover {
+    border-color: rgba(184, 154, 94, 0.7);
+    text-decoration: none;
+  }
+
+  .flyer-card-title {
+    margin: 18px 0 0;
+    color: var(--flyer-text-main);
+    font-size: 1.16rem;
+    font-weight: 500;
+    line-height: 1.62;
+  }
+
+  .flyer-card-desc {
+    margin: 18px 0 0;
+    color: var(--flyer-text-sub);
+    font-size: 0.94rem;
+    line-height: 1.85;
+  }
+
+  .flyer-card-spacer {
+    flex: 1;
+  }
+
+  .flyer-live {
+    display: grid;
+    grid-template-columns: 0.42fr 1fr;
+    gap: 26px;
+    margin-top: 34px;
+    padding: 24px;
+    border: 1px solid var(--flyer-border);
+    border-radius: 6px;
+    background: var(--flyer-surface);
+  }
+
+  .flyer-live-date {
+    color: var(--flyer-accent);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  .flyer-live-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  .flyer-live-detail,
+  .flyer-about-copy,
+  .flyer-footer-copy {
+    color: var(--flyer-text-sub);
+  }
+
+  .flyer-live-detail {
+    margin: 12px 0 0;
+    font-size: 0.95rem;
+  }
+
+  .flyer-link {
+    display: inline-flex;
+    margin-top: 20px;
+    color: var(--flyer-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .flyer-about-copy {
+    max-width: 660px;
+    margin: 28px 0 0;
+  }
+
+  .flyer-about-copy p {
+    margin: 0 0 1.25rem;
+  }
+
+  .flyer-footer {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .flyer-sns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 24px;
+    margin-top: 28px;
+  }
+
+  .flyer-sns a {
+    color: var(--flyer-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+
+  .flyer-sns a:hover {
+    color: var(--flyer-accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flyer-fade {
+      opacity: 1;
+      animation: none;
+      transform: none;
+    }
+
+    .flyer-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .flyer-shell {
+      padding: 24px 24px 56px;
+    }
+
+    .flyer-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .flyer-tagline {
+      text-align: left;
+    }
+
+    .flyer-section {
+      padding: 80px 0;
+    }
+
+    .flyer-hero {
+      padding-top: 72px;
+    }
+
+    .flyer-hero-title {
+      font-size: 2rem;
+    }
+
+    .flyer-story-title {
+      font-size: 1.7rem;
+    }
+
+    .flyer-featured,
+    .flyer-grid,
+    .flyer-live {
+      grid-template-columns: 1fr;
+    }
+
+    .flyer-featured {
+      padding: 0;
+      background: transparent;
+    }
+
+    .flyer-featured-image {
+      min-height: 260px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .flyer-featured-body {
+      padding: 24px;
+      border-top: 1px solid var(--flyer-border);
+      background: var(--flyer-surface-subtle);
+    }
+
+    .flyer-card {
+      min-height: 0;
+    }
+  }
+</style>
+
+<div class="flyer-page" data-default-src="counter">
+  <div class="flyer-shell">
+    <header class="flyer-header flyer-fade flyer-fade-1" aria-label="THE AFTER PARTY">
+      <a class="flyer-brand" href="/">THE AFTER PARTY</a>
+      <p class="flyer-tagline">Local music magazine</p>
+    </header>
+
+    <section class="flyer-section flyer-hero" aria-labelledby="flyer-hero-title">
+      <span class="flyer-label flyer-fade flyer-fade-1">After the flyer</span>
+      <h1 class="flyer-hero-title flyer-fade flyer-fade-2" id="flyer-hero-title" data-variant-heading>待ち時間に、<br>街の音楽を少しだけ。</h1>
+      <p class="flyer-lead flyer-fade flyer-fade-3" data-variant-lead>
+        この街で演奏している人たちの話を、<br>
+        5分で読めるインタビューにしました。<br>
+        料理が来るまで、コーヒーが冷めるまで、<br>
+        知らない音楽に少しだけ寄り道してみてください。
+      </p>
+      <a class="flyer-button flyer-fade flyer-fade-4" href="#opening-story" data-track="hero_cta_click" data-variant-cta>5分で読める記事を読む ↓</a>
+    </section>
+
+    <section class="flyer-section" id="opening-story" aria-labelledby="opening-story-title">
+      <article class="flyer-featured flyer-reveal" data-reveal>
+        <figure class="flyer-featured-image">
+          <img src="/posts/yurie-and-mercy/01/ym01.png" alt="yurie♪&マーシー">
+        </figure>
+        <div class="flyer-featured-body">
+          <span class="flyer-label">Opening story</span>
+          <h2 class="flyer-story-title" id="opening-story-title">雨の夜に、ふたりは音を合わせた。</h2>
+          <div class="flyer-story-copy">
+            <p>定年退職して故郷へ帰ってきたギタリストと、失意の中にいたオペラ歌手。</p>
+            <p>ふたりが出会ったのは、雨の夜でした。</p>
+            <p>街の片隅で始まった小さな音楽が、いまも誰かの夜に残っている。yurie♪＆マーシーの物語を、最初の一篇としてどうぞ。</p>
+          </div>
+          <div class="flyer-meta-row">
+            <span class="flyer-meta">5 min read</span>
+            <span class="flyer-meta">Interview / Local music</span>
+          </div>
+          <a class="flyer-button" href="/posts/yurie-and-mercy/01/" data-track="featured_story_click" data-article-id="yurie-marcy-rainy-night">この話を読む</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="flyer-section" aria-labelledby="read-first-title">
+      <span class="flyer-label flyer-reveal" data-reveal>Read first</span>
+      <h2 class="flyer-section-title flyer-reveal" id="read-first-title" data-reveal>まずは、この3本から。</h2>
+      <div class="flyer-grid">
+        <a class="flyer-card flyer-reveal" href="/posts/kanari-ryo/3-6/" data-track="article_card_click" data-article-id="kanari-ryo-start-again" data-article-position="1" data-reveal>
+          <span class="flyer-card-kicker">01</span>
+          <h3 class="flyer-card-title">ステージに立つ理由は、<br>まだ言葉になりきらない</h3>
+          <p class="flyer-card-desc">地元で歌い続けるシンガーに、音楽を始めた頃の話を聞きました。</p>
+          <span class="flyer-card-spacer"></span>
+          <span class="flyer-meta">3 min read</span>
+        </a>
+        <a class="flyer-card flyer-reveal" href="/posts/yurie-and-mercy/04/" data-track="article_card_click" data-article-id="livehouse-as-home" data-article-position="2" data-reveal>
+          <span class="flyer-card-kicker">02</span>
+          <h3 class="flyer-card-title">ライブハウスは、<br>帰る場所にもなる</h3>
+          <p class="flyer-card-desc">お客さん、演者、店。小さな場所で生まれる関係の話。</p>
+          <span class="flyer-card-spacer"></span>
+          <span class="flyer-meta">5 min read</span>
+        </a>
+        <a class="flyer-card flyer-reveal" href="/posts/anna-mareh/03/" data-track="article_card_click" data-article-id="anna-mareh-session" data-article-position="3" data-reveal>
+          <span class="flyer-card-kicker">03</span>
+          <h3 class="flyer-card-title">知らない街の夜に、<br>ベースの音が残った</h3>
+          <p class="flyer-card-desc">演奏者の視点から読む、ローカルシーンの記録。</p>
+          <span class="flyer-card-spacer"></span>
+          <span class="flyer-meta">4 min read</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="flyer-section" aria-labelledby="next-live-title">
+      <span class="flyer-label flyer-reveal" data-reveal>Next live</span>
+      <h2 class="flyer-section-title flyer-reveal" id="next-live-title" data-reveal>気になったら、次は生で。</h2>
+      <p class="flyer-lead flyer-reveal" data-reveal>記事で出会った人の音は、どこかの夜で、また鳴っています。</p>
+      <article class="flyer-live flyer-reveal" data-reveal>
+        <div class="flyer-live-date">Next<br>night</div>
+        <div>
+          <h3 class="flyer-live-title">THE AFTER PARTY live information</h3>
+          <p class="flyer-live-detail">Venue: 街のライブハウス / Acts: 掲載ミュージシャンほか</p>
+          <a class="flyer-link" href="/" data-track="live_info_click" data-live-id="after-party-live-info">詳細を見る</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="flyer-section" aria-labelledby="about-title">
+      <span class="flyer-label flyer-reveal" data-reveal>About</span>
+      <h2 class="flyer-section-title flyer-reveal" id="about-title" data-reveal>このマガジンについて</h2>
+      <div class="flyer-about-copy flyer-reveal" data-reveal>
+        <p>ライブの告知だけでは、届ききらないものがあります。</p>
+        <p>どんな仕事のあとに歌っているのか。どんな出会いから、音が始まったのか。なぜその街で、まだ演奏を続けているのか。</p>
+        <p>THE AFTER PARTY は、ミュージシャンを音楽商品としてではなく、ひとりの人生の横顔として描くローカル音楽マガジンです。</p>
+        <p>スーパースターではなく、この街にいるローカルスターたちへ。大きな成功譚ではなく、ある夜、ある場所、ある出会いから始まる物語を。単館ドラマのような温度で、街の音楽を記録しています。</p>
+      </div>
+    </section>
+
+    <section class="flyer-section flyer-footer" aria-labelledby="sns-title">
+      <span class="flyer-label flyer-reveal" data-reveal>Footer / SNS</span>
+      <h2 class="flyer-section-title flyer-reveal" id="sns-title" data-reveal>また読みたくなったら。</h2>
+      <p class="flyer-footer-copy flyer-reveal" data-reveal>新しい記事やライブ情報を、静かにお知らせしています。</p>
+      <nav class="flyer-sns flyer-reveal" aria-label="SNS links" data-reveal>
+        <a href="https://www.instagram.com/" data-track="sns_click" data-platform="instagram">Instagram</a>
+        <a href="https://x.com/" data-track="sns_click" data-platform="x">X</a>
+        <a href="https://www.youtube.com/" data-track="sns_click" data-platform="youtube">YouTube</a>
+        <a href="https://note.com/" data-track="sns_click" data-platform="note">note</a>
+        <a href="/" data-track="sns_click" data-platform="official-site">公式サイト</a>
+      </nav>
+    </section>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var variants = {
+      counter: {
+        heading: "待ち時間に、<br>街の音楽を少しだけ。",
+        lead: "この街で演奏している人たちの話を、<br>5分で読めるインタビューにしました。<br>料理が来るまで、コーヒーが冷めるまで、<br>知らない音楽に少しだけ寄り道してみてください。",
+        cta: "5分で読める記事を読む ↓"
+      },
+      bar: {
+        heading: "一杯のあいだに、<br>知らない音楽と出会う。",
+        lead: "ライブの前にも、あとにも、<br>人にはそれぞれの物語があります。<br>この街で鳴っている人たちの話を、<br>グラス片手に読める短い記事にしました。",
+        cta: "夜に読むインタビューへ ↓"
+      },
+      music: {
+        heading: "この街で鳴っている<br>人たちの話。",
+        lead: "ライブで見かけた人。<br>名前だけ知っているバンド。<br>対バンしたけれど、まだ深く話したことのない人。<br>その背景を読むための、ローカル音楽マガジンです。",
+        cta: "ミュージシャンの記事を読む ↓"
+      }
+    };
+
+    var params = new URLSearchParams(window.location.search);
+    var src = params.get("src");
+    if (!variants[src]) src = "counter";
+
+    var heading = document.querySelector("[data-variant-heading]");
+    var lead = document.querySelector("[data-variant-lead]");
+    var cta = document.querySelector("[data-variant-cta]");
+    heading.innerHTML = variants[src].heading;
+    lead.innerHTML = variants[src].lead;
+    cta.textContent = variants[src].cta;
+
+    function track(name, data) {
+      var payload = Object.assign({
+        src: src,
+        timestamp: new Date().toISOString()
+      }, data || {});
+
+      if (window.gtag) {
+        window.gtag("event", name, payload);
+      }
+    }
+
+    track("qr_landing_view", {
+      userAgent: navigator.userAgent
+    });
+
+    document.querySelectorAll("[data-track]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var eventName = el.getAttribute("data-track");
+        var payload = {};
+
+        if (eventName === "hero_cta_click") {
+          payload.ctaLabel = el.textContent.trim();
+        }
+
+        if (eventName === "featured_story_click") {
+          payload.articleId = el.getAttribute("data-article-id");
+        }
+
+        if (eventName === "article_card_click") {
+          payload.articleId = el.getAttribute("data-article-id");
+          payload.articlePosition = el.getAttribute("data-article-position");
+        }
+
+        if (eventName === "live_info_click") {
+          payload.liveId = el.getAttribute("data-live-id");
+        }
+
+        if (eventName === "sns_click") {
+          payload.platform = el.getAttribute("data-platform");
+        }
+
+        track(eventName, payload);
+      });
+    });
+
+    var revealItems = document.querySelectorAll("[data-reveal]");
+
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.1
+    });
+
+    revealItems.forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+{{ end }}

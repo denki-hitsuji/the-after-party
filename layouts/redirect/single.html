@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ $src := .Params.src | default "counter" }}
+{{ $redirectTo := .Params.redirectTo | default "/flyer/?src=counter" }}
+<style>
+  body {
+    background: #0e0e0c;
+    color: #e8e1d5;
+  }
+
+  body > header,
+  body > footer {
+    display: none;
+  }
+</style>
+<p>THE AFTER PARTY を開いています。</p>
+<p><a href="{{ $redirectTo }}">移動しない場合はこちら</a></p>
+<script>
+  (function () {
+    var redirectTo = {{ $redirectTo }};
+    var payload = {
+      src: {{ $src }},
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      referer: document.referrer || "",
+      redirectTo: redirectTo
+    };
+
+    if (window.gtag) {
+      window.gtag("event", "redirect_access", payload);
+    }
+
+    window.setTimeout(function () {
+      window.location.replace(redirectTo);
+    }, 160);
+  })();
+</script>
+{{ end }}
