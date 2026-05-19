@@ -4,7 +4,7 @@ date: 2026-05-17T20:00:00+09:00
 musician: "geru"
 band: "geru"
 donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
-draft: false
+draft: true
 ---
 
 **さとレ：** あれねあの……なんていうか難しいのはコントロールと、やっぱりタイム感っていうか。音がでかくなっても小さくなってもテンポを一定に保つのって結構難しい。

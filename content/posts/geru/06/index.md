@@ -4,7 +4,7 @@ date: 2026-05-17T20:00:00+09:00
 musician: "geru"
 band: "geru"
 donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
-draft: false
+draft: true
 ---
 
 **geru：** 歌い出したのは、もう40歳をまわってから。だんだん一緒にやってくれるメンバーの方々を探すのが大変になってきちゃって、みんな生活が忙しいんですよ。
