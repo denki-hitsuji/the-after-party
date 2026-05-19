@@ -561,12 +561,18 @@
         heading: "この街で鳴っている<br>人たちの話。",
         lead: "ライブで見かけた人。<br>名前だけ知っているバンド。<br>対バンしたけれど、まだ深く話したことのない人。<br>その背景を読むための、ローカル音楽マガジンです。",
         cta: "ミュージシャンの記事を読む ↓"
+      },
+      sns: {
+        label: 'Found on social',
+        heading: 'この街で鳴っている\n人たちの話。',
+        lead: 'ローカルミュージシャンの横顔を、\n短いインタビューで記録しています。',
+        cta: '記事を読む →',
       }
     };
 
     var params = new URLSearchParams(window.location.search);
     var src = params.get("src");
-    if (!variants[src]) src = "counter";
+    if (!variants[src]) src = "sns";
 
     var heading = document.querySelector("[data-variant-heading]");
     var lead = document.querySelector("[data-variant-lead]");
