@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
 draft: false
 ---
 
-![geru](IMG_9798.JPG)
+![geru](./IMG_9798.JPG)
 
 _記録の話になった。さとレが「記念」という言葉について話しはじめる。_
 

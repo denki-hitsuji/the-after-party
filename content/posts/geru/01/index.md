@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
 draft: false
 ---
 
-![geru](IMG_9811.JPG)
+![geru](./IMG_9811.JPG)
 
 **さとレックス（以下さとレ）：** もう回ってるから、取材のテイでしゃべりながら……
 

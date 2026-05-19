@@ -7,7 +7,7 @@ donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
 draft: false
 ---
 
-![geru](IMG_9792.JPG)
+![geru](./IMG_9792.JPG)
 
 **さとレ：** 幼少のみぎりの頃ってどんな子供だったんですか？
 
