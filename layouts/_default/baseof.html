@@ -12,11 +12,15 @@
         }
         
         :root {
-            --bg-color: #1d1f21;
-            --text-color: #c9cacc;
-            --accent-color: #99cc99;
-            --secondary-color: #f2777a;
-            --border-color: #515151;
+            --bg-color: #0e0e0c;
+            --surface-color: #171714;
+            --surface-subtle-color: #12120f;
+            --text-color: #e8e1d5;
+            --text-sub-color: #a9a092;
+            --text-muted-color: #746e64;
+            --accent-color: #b89a5e;
+            --secondary-color: #a56a43;
+            --border-color: #2b2924;
         }
         
         body {
@@ -64,7 +68,7 @@
         
         .site-description {
             font-size: 0.9rem;
-            color: #8a8a8a;
+            color: var(--text-sub-color);
             font-style: italic;
             line-height: 1.6;
         }
@@ -120,7 +124,7 @@
             border: 1px solid var(--border-color);
             border-radius: 6px;
             transition: all 0.3s ease;
-            background-color: var(--bg-color);
+            background-color: var(--surface-subtle-color);
         }
         
         @media (min-width: 768px) {
@@ -133,7 +137,7 @@
         .posts article:hover {
             border-color: var(--accent-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background-color: var(--surface-color);
         }
         
         /* 記事ページ用のスタイル */
@@ -176,7 +180,7 @@
         } 
         .meta {
             font-size: 0.85rem;
-            color: #8a8a8a;
+            color: var(--text-muted-color);
             margin-bottom: 20px;
         }
         
@@ -229,7 +233,7 @@
         
         .donate-section p {
             font-style: italic;
-            color: #8a8a8a;
+            color: var(--text-sub-color);
             margin-bottom: 15px;
         }
         
@@ -243,7 +247,7 @@
             display: inline-block;
             padding: 12px 24px;
             background-color: var(--secondary-color);
-            color: #fff;
+            color: var(--text-color);
             border-radius: 4px;
             margin-top: 20px;
             transition: background-color 0.3s;
@@ -252,7 +256,7 @@
         }
         
         .donate-button:hover {
-            background-color: #ff9999;
+            background-color: var(--accent-color);
             text-decoration: none;
         }
         
@@ -262,7 +266,7 @@
             padding-top: 30px;
             border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
-            color: #8a8a8a;
+            color: var(--text-muted-color);
         }
         
         @media (min-width: 768px) {

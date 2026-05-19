@@ -3,6 +3,9 @@ title: "yurie♪&マーシー ｜ 第5話：「宇宙と茨城と、流しの夢
 date: 2026-04-07T21:25:00+09:00
 musician: "yurie♪&マーシー"
 band: "yurie♪&マーシー"
+musicians:
+  - "yurie"
+  - "mercy"
 donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
@@ -117,7 +120,7 @@ draft: false
 
 ---
 
-**マーシー：** クリスピーナッツのBling-Bang-Bang-Born、アコギと歌のデュオでやるっていうのはすごく斬新だなと思ってて。
+**マーシー：** Creepy NutsのBling-Bang-Bang-Born、アコギと歌のデュオでやるっていうのはすごく斬新だなと思ってて。
 
 **yurie♪：** これはバズるぞと思って（笑）。
 

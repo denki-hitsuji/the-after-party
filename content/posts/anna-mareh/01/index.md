@@ -3,6 +3,8 @@ title: "アンナ・マレェ ｜ 第1話：「動く」ということ"
 date: 2026-03-25T20:30:00+09:00
 musician: "アンナ・マレェ"
 band: "アンナ・マレェ"
+musicians:
+  - "anna-mareh"
 donate_button_id: "buy_btn_1TFf9V3ghjjDhalOm9X4bcnP"
 draft: false
 ---
@@ -63,4 +65,4 @@ draft: false
 
 ---
 
-*[第2話につづく](../02/index.md)*
+*[第2話につづく](../02/)*

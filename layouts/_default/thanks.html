@@ -6,10 +6,16 @@
   <title>{{ .Title }}</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-color: #0e0e0c;
+      --text-color: #e8e1d5;
+      --text-sub-color: #a9a092;
+      --text-muted-color: #746e64;
+    }
     body {
       font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
-      background-color: #1d1f21;
-      color: #c9cacc;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -19,18 +25,23 @@
     .thanks-wrap {
       text-align: center;
       max-width: 500px;
+      width: 100%;
+    }
+    .thanks-wrap img {
+      max-width: 100%;
+      height: auto;
     }
     .thanks-wrap p { line-height: 1.8; }
     .thanks-wrap em {
       font-size: 0.9rem;
-      color: #8a8a8a;
+      color: var(--text-sub-color);
       display: block;
       margin-top: 20px;
     }
     .redirect-note {
       margin-top: 40px;
       font-size: 0.85rem;
-      color: #515151;
+      color: var(--text-muted-color);
     }
   </style>
 </head>

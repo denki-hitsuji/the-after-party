@@ -3,6 +3,9 @@ title: "yurie♪&マーシー ｜ 第1話：「ある雨の木曜日、3月23日
 date: 2026-04-07T21:25:00+09:00
 musician: "yurie♪&マーシー"
 band: "yurie♪&マーシー"
+musicians:
+  - "yurie"
+  - "mercy"
 donate_button_id: "buy_btn_1TJsgf3ghjjDhalOZPftHiM3"
 draft: false
 ---
@@ -64,4 +67,4 @@ draft: false
 
 ---
 
-*[第2話につづく](../02)*
+*[第2話につづく](../02/)*
