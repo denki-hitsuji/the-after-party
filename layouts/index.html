@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="posts">
-    {{ range .Site.RegularPages }}
+    {{ range .Site.RegularPages.ByDate.Reverse }}
     <article>
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <div class="meta">{{ .Date.Format "2006年1月2日" }}</div>
