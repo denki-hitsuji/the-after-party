@@ -1,7 +1,7 @@
 ---
 title: "ありがとうございます"
 layout: "thanks"
-_build:
+build:
   list: never
 ---
 

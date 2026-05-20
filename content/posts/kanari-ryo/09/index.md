@@ -8,6 +8,8 @@ musicians:
 donate_button_id: "buy_btn_1TY09m3ghjjDhalODFTJSLjW"
 draft: false
 weight: 9
+aliases:
+  - /posts/kanari-ryo/3-9/
 ---
 
 ![金成亮](/images/kanari-ryo.jpg)
@@ -160,4 +162,4 @@ weight: 9
 
 ---
 
-*[第10話につづく](../3-10/)*
+*[第10話につづく](../10/)*

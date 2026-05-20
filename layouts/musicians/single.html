@@ -2,7 +2,7 @@
 {{ $slug := .Params.slug | default .File.BaseFileName }}
 {{ $posts := where site.RegularPages "Section" "posts" }}
 {{ $related := where $posts "Params.musicians" "intersect" (slice $slug) }}
-{{ $articles := sort $related "Date" "desc" }}
+{{ $articles := sort $related "Weight" "asc" }}
 
 <style>
 .musician-profile {

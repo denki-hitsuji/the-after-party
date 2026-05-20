@@ -2,6 +2,8 @@
 title: "geru ｜ 第5話：「19歳、遅すぎる」"
 date: 2026-05-17T20:00:00+09:00
 musician: "geru"
+musicians:
+  - "geru"
 band: "geru"
 donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
 draft: false

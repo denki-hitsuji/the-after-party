@@ -3,7 +3,7 @@ title: "ありがとうございます"
 layout: "thanks"
 redirect: "https://x.com/kanari_ryo0810"
 redirect_seconds: 5
-_build:
+build:
   list: never
 ---
 

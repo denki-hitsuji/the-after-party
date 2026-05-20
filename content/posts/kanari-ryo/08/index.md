@@ -8,6 +8,8 @@ musicians:
 donate_button_id: "buy_btn_1TY09m3ghjjDhalODFTJSLjW"
 draft: false
 weight: 8
+aliases:
+  - /posts/kanari-ryo/3-8/
 ---
 
 ![金成亮](/images/kanari-ryo.jpg)
@@ -120,4 +122,4 @@ __かくかくしかじかが語られました__
 
 ---
 
-*[第9話につづく](../3-9/)*
+*[第9話につづく](../09/)*

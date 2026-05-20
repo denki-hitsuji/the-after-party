@@ -3,7 +3,7 @@ title: "ありがとうございます"
 layout: "thanks"
 redirect: "https://x.com/to5n1anlna?s=21&t=P0ALGmWJxuNfJ7O_UgoySg"
 redirect_seconds: 5
-_build:
+build:
   list: never
 ---
 

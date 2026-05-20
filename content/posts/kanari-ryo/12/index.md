@@ -8,6 +8,8 @@ musicians:
 donate_button_id: "buy_btn_1TY09m3ghjjDhalODFTJSLjW"
 draft: false
 weight: 12
+aliases:
+  - /posts/kanari-ryo/3-12/
 ---
 
 ![金成亮](/images/kanari-ryo.jpg)  
