@@ -8,6 +8,8 @@ musicians:
 donate_button_id: "buy_btn_1TY09m3ghjjDhalODFTJSLjW"
 draft: false
 weight: 5
+aliases:
+  - /posts/kanari-ryo/3-5/
 ---
 
 ![金成亮](/images/kanari-ryo.jpg)
@@ -58,4 +60,4 @@ weight: 5
 
 ---
 
-*[第6話につづく](../3-6/)*
+*[第6話につづく](../06/)*

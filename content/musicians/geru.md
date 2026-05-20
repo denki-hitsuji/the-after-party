@@ -2,6 +2,14 @@
 title: geru
 slug: geru
 aliases: [/musicians/geru/]
+act: "geru"
+role: "Vocal / Guitar"
+area: "茨城"
+description: "シンガーソングライター、ベーシスト。日立でOne Dayというサーキットイベントを主催する。水戸90Eastで、毎月geru TVを放送中。"
+build:
+  list: never
+  render: always
+draft: false
 ---
 
 ギター・ベース・ボーカルのマルチプレイヤー。茨城を拠点に弾き語りライブやバンド活動を精力的に行う。ONE DAY FESTIVAL 主催者として、茨城の音楽シーンの発展に尽力している。

@@ -1,7 +1,28 @@
 {{ define "main" }}
+<style>
+.series-label {
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+}
+.series-label a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.series-label a:hover {
+    border-bottom-color: var(--accent-color);
+    text-decoration: none;
+}
+</style>
 <div class="posts">
     {{ range .Site.RegularPages.ByDate.Reverse }}
     <article>
+        {{ $musician := .Params.musician }}
+        {{ $slug := index .Params.musicians 0 }}
+        {{ if and $musician $slug }}
+        <div class="series-label"><a href="/musicians/{{ $slug }}/">{{ $musician }}</a></div>
+        {{ end }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <div class="meta">{{ .Date.Format "2006年1月2日" }}</div>
         <div class="content">

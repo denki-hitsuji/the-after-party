@@ -8,6 +8,8 @@ musicians:
 donate_button_id: "buy_btn_1TY09m3ghjjDhalODFTJSLjW"
 draft: false
 weight: 1
+aliases:
+  - /posts/kanari-ryo/3-1/
 ---
 
 ![金成亮](/images/kanari-ryo.jpg)
@@ -144,4 +146,4 @@ _会場に用意したデリを食べつつ、取材を開始します。_
 
 ---
 
-*[第2話につづく](../3-2/)*
+*[第2話につづく](../02/)*
