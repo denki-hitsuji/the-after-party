@@ -2,7 +2,7 @@
 title: "ありがとうございます"
 layout: "thanks"
 redirect: "https://x.com/geru_posa"
-redirect_seconds: 5
+redirect_seconds: 10
 build:
   list: never
 ---
