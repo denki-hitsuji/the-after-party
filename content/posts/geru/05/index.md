@@ -6,7 +6,7 @@ musicians:
   - "geru"
 band: "geru"
 donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
-draft: true
+draft: false
 ---
 
 **さとレ：** 高校に入ってさっきのBOΦWYの話につながっていくっていうことですよね。

@@ -6,7 +6,7 @@ musicians:
   - "geru"
 band: "geru"
 donate_button_id: "buy_btn_1TYigX3ghjjDhalO1zStq17x"
-draft: true
+draft: false
 ---
 
 **[geru](https://x.com/geru_posa)：** 悲しい話ですけど、ライブハウスで待ってても人来ないんですから。悲しい現実なんですけど、昔はそんなことなかったのかもしれないけれど。娯楽が今よりも少ない時代は、それでもアンテナ伸ばしてる若者は集まってくれたんですけど。もっと世の中全世界的に、いろんなものが広がってしまったので。
