@@ -1,4 +1,16 @@
 people:
+  - name: "小川周二"
+    url: "/musicians/ogawa-shuji/"
+    act: "小川周二"
+    role: "Vocal / Guitar / Poet"
+    area: "茨城"
+    articles:
+      - title: "小川周二 ｜ 第1話：「世界が、優しくなっていた」"
+        url: "/posts/ogawa-shuji/01/"
+      - title: "小川周二 ｜ 第3話：「電潮詩集」"
+        url: "/posts/ogawa-shuji/03/"
+      - title: "小川周二 ｜ 第5話：「希望は、悪霊の世界の養い子」"
+        url: "/posts/ogawa-shuji/05/"
   - name: "geru"
     url: "/musicians/geru/"
     act: "geru"
@@ -61,6 +73,23 @@ people:
         url: "/posts/anna-mareh/03/"
 
 monthly_articles:
+  - month: "2026年6月"
+    articles:
+      - title: "小川周二 ｜ 第1話：「世界が、優しくなっていた」"
+        guest: "小川周二"
+        url: "/posts/ogawa-shuji/01/"
+      - title: "小川周二 ｜ 第2話：「袋田の滝の前で、思いついた」"
+        guest: "小川周二"
+        url: "/posts/ogawa-shuji/02/"
+      - title: "小川周二 ｜ 第3話：「電潮詩集」"
+        guest: "小川周二"
+        url: "/posts/ogawa-shuji/03/"
+      - title: "小川周二 ｜ 第4話：「矛盾と妥協が、ずっと続いてる」"
+        guest: "小川周二"
+        url: "/posts/ogawa-shuji/04/"
+      - title: "小川周二 ｜ 第5話：「希望は、悪霊の世界の養い子」"
+        guest: "小川周二"
+        url: "/posts/ogawa-shuji/05/"
   - month: "2026年5月"
     articles:
       - title: "geru ｜ 第1話：「ライブの本数分だけ楽しい」"
