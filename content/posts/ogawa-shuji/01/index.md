@@ -1,6 +1,6 @@
 ---
 title: "小川周二 ｜ 第1話：「世界が、優しくなっていた」"
-date: 2026-05-26T20:00:00+09:00
+date: 2026-05-25T20:00:00+09:00
 musician: "ogawa-shuji"
 musicians:
   - "ogawa-shuji"
