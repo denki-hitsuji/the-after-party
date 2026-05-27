@@ -9,7 +9,7 @@ description: "シンガーソングライター・詩人。黒潮相聞歌を手
 build:
   list: never
   render: always
-draft: true
+draft: false
 ---
 
 詩を書き、音楽を作り、人に手渡す。小川周二の活動はその繰り返しだ。
