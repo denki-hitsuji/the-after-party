@@ -5,6 +5,7 @@ musician: "ogawa-shuji"
 musicians:
   - "ogawa-shuji"
 band: "小川周二"
+donate_button_id: "buy_btn_1Tbp8N3ghjjDhalO4DKOXKk5"
 draft: false
 ---
 

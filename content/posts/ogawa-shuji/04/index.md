@@ -5,8 +5,11 @@ musician: "ogawa-shuji"
 musicians:
   - "ogawa-shuji"
 band: "小川周二"
+donate_button_id: "buy_btn_1Tbp8N3ghjjDhalO4DKOXKk5"
 draft: false
 ---
+
+![小川周二](shuji02.JPG)
 
 **小川周二（以下周二）：** 沖縄でアメリカ人の旅人と話したんですよ。大学時代にアメリカを巡っていたって言って。ニューヨークの人たちは特にセルフィッシュだったと言ってて、田舎に行くにつれて様子が違ってくるのを感じながら旅をしたと。それを聞いて、アメリカの田舎に行って音楽なりで表現してみて、何かが得られればと思ったんですよね。
 

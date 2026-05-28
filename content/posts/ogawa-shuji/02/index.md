@@ -5,8 +5,10 @@ musician: "ogawa-shuji"
 musicians:
   - "ogawa-shuji"
 band: "小川周二"
+donate_button_id: "buy_btn_1Tbp8N3ghjjDhalO4DKOXKk5"
 draft: false
 ---
+![小川周二](shuji01.JPG)
 
 **小川周二（以下周二）：** 袋田の滝に行ったんですよ。すごい上手いけんちん蕎麦食って、袋田の滝を目の前にしたら「俺ワンマンやろう」と思ったんだ。
 
@@ -43,6 +45,6 @@ draft: false
 
 **周二：** ここでも、世の中は優しく変わってるなって思ったんだよ。その後もなんか2回に1回は投げてもらってる。
 
-**さとレ：** ははははは。
+**さとレ：** (笑)
 
 *[第3話につづく](../03/)*
