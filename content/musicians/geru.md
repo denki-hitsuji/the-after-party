@@ -3,7 +3,7 @@ title: geru
 slug: geru
 aliases: [/musicians/geru/]
 act: "geru"
-role: "Vocal / Guitar"
+role: "Vocal / Guitar / Bass / Play"
 area: "茨城"
 description: "シンガーソングライター、ベーシスト。日立でOne Dayというサーキットイベントを主催する。水戸90Eastで、毎月geru TVを放送中。"
 build:
