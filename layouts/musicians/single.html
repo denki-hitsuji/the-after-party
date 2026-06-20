@@ -16,6 +16,31 @@
     margin: 24px 0 0;
 }
 
+.musician-profile-header {
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: rgba(0,0,0,0.02);
+    margin-top: 18px;
+}
+
+.musician-sep {
+    display: none;
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 28px 0;
+}
+
+.musician-sep.top {
+    margin: 12px 0 18px;
+}
+.musician-body {
+    margin-top: 32px;
+    color: var(--text-sub-color);
+    line-height: 1.9;
+}
+
 .musician-meta {
     display: flex;
     flex-wrap: wrap;
@@ -85,19 +110,48 @@
     color: var(--text-muted-color);
     font-size: 0.95rem;
 }
+
+@media (max-width: 600px) {
+    .musician-profile-header {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        margin-top: 8px;
+    }
+
+    .musician-sep {
+        display: block;
+    }
+
+    .musician-articles {
+        margin-top: 28px;
+        padding-top: 16px;
+    }
+}
+
 </style>
 
 <article class="musician-profile">
-    <h2>{{ .Title }}</h2>
+    <hr class="musician-sep top" />
+    <div class="musician-profile-header">
+        <h2>{{ .Title }}</h2>
 
-    <div class="musician-meta">
-        {{ with .Params.act }}<span>{{ . }}</span>{{ end }}
-        {{ with index .Params "role" }}<span>{{ . }}</span>{{ end }}
-        {{ with .Params.area }}<span>{{ . }}</span>{{ end }}
+        <div class="musician-meta">
+            {{ with .Params.act }}<span>{{ . }}</span>{{ end }}
+            {{ with index .Params "role" }}<span>{{ . }}</span>{{ end }}
+            {{ with .Params.area }}<span>{{ . }}</span>{{ end }}
+        </div>
+
+        {{ with .Params.description }}
+            <p class="musician-description">{{ . }}</p>
+        {{ end }}
     </div>
 
-    {{ with .Params.description }}
-        <p class="musician-description">{{ . }}</p>
+    <hr class="musician-sep" />
+
+    {{ with .Content }}
+        <div class="musician-body">{{ . }}</div>
     {{ end }}
 
     <section class="musician-articles" aria-labelledby="musician-articles-title">
