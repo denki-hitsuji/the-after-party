@@ -9,6 +9,8 @@ donate_button_id: "buy_btn_1TkLlQ3ghjjDhalO1tMlnDSr"
 draft: false
 ---
 
+![浦上キョウタ](kyota05.jpg)
+
 **さとレ：** 僕自身、今49歳でもう間もなく折り返しにあって。今までは「ちゃんとしなきゃ」みたいな圧が強かったような気がしていて。
 
 **キョウタ：** え、結婚は？
