@@ -1,7 +1,7 @@
 ---
 title: "浦上キョウタ ｜ 第1話：「高円寺で育った幼少期」"
 date: 2026-06-18T21:00:00+09:00
-musician: "urakami-kyota"
+musician: "浦上キョウタ"
 musicians:
   - "urakami-kyota"
 band: "浦上キョウタ"
@@ -9,7 +9,7 @@ donate_button_id: "buy_btn_1TkLlQ3ghjjDhalO1tMlnDSr"
 draft: false 
 ---
 
-![浦上キョウタ](kyota01.jpg)
+![浦上キョウタ](kyota1.jpg)
 
 **さとレックス（以下さとレ）：** 今日のゲストはレオズ・ライブバーのマスター・キョウタさんです。よろしくお願いします。
 

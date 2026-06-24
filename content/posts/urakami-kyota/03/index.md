@@ -9,7 +9,7 @@ donate_button_id: "buy_btn_1TkLlQ3ghjjDhalO1tMlnDSr"
 draft: false
 ---
 
-![浦上キョウタ](kyota03.jpg)
+![浦上キョウタ](kyota3.jpg)
 
 **さとレ：** ちなみに僕がライブやらせていただいてとってもありがたいのは、常にここは配信があるので、遠方にいるファンの皆さんに楽しんでいただくことができて。
 

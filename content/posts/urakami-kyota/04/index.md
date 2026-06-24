@@ -9,7 +9,7 @@ donate_button_id: "buy_btn_1TkLlQ3ghjjDhalO1tMlnDSr"
 draft: false
 ---
 
-![浦上キョウタ](kyota04.jpg)
+![浦上キョウタ](kyota4.jpg)
 
 **さとレ：** ブログを書かれてますよね。書きたくなるタイミングってどんな感じだったりするんですか？
 

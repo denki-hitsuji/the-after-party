@@ -9,7 +9,7 @@ donate_button_id: "buy_btn_1TkLlQ3ghjjDhalO1tMlnDSr"
 draft: false 
 ---
 
-![浦上キョウタ](kyota02.jpg)
+![浦上キョウタ](kyota2.jpg)
 
 **さとレ：** キョウタさんは土浦のキーマンの一人だなと思って見てるんですけど。実際に住まれて何年ぐらいになるんですか？
 
