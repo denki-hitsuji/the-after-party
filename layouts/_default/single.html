@@ -8,6 +8,20 @@ article hr {
     opacity: 0.5;
 }
 
+.series-start {
+    font-size: 0.85rem;
+    margin: -12px 0 26px;
+}
+
+.series-start a {
+    color: var(--text-muted-color);
+}
+
+.series-start a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
 .donate-section {
     margin-top: 50px;
     padding-top: 40px;
@@ -30,6 +44,7 @@ article hr {
 <article>
     <h2>{{ .Title }}</h2>
     <div class="meta">{{ .Date.Format "2006年1月2日" }} • {{ .Params.musician }}</div>
+    {{ partial "series-nav.html" . }}
     <div class="content">
         {{ .Content }}
     </div>

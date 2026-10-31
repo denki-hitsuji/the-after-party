@@ -1,0 +1,30 @@
+{{/* 同じシリーズの第1話へのリンク。第1話自身では出さない。
+     content/posts/<シリーズ名>/<話数>/index.md という構成を前提に、
+     自分の1つ上のフォルダを同じシリーズとみなす。
+     （各シリーズに _index.md を置いていないため .CurrentSection は
+     /posts/ 全体を指してしまうので、ファイルの位置から判定している） */}}
+{{ $cur := . }}
+{{ $prefix := "" }}
+{{ with .File }}
+  {{ $parts := split (strings.TrimSuffix "/" .Dir) "/" }}
+  {{ if ge (len $parts) 3 }}
+    {{ $prefix = printf "%s/" (path.Dir (strings.TrimSuffix "/" .Dir)) }}
+  {{ end }}
+{{ end }}
+{{ if $prefix }}
+  {{ $episodes := slice }}
+  {{ range site.RegularPages }}
+    {{ if .File }}
+      {{ if hasPrefix .File.Dir $prefix }}
+        {{ $episodes = $episodes | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $episodes = sort $episodes "File.Path" "asc" }}
+  {{ if gt (len $episodes) 1 }}
+    {{ $first := index $episodes 0 }}
+    {{ if ne $first.RelPermalink $cur.RelPermalink }}
+      <div class="series-start"><a href="{{ $first.RelPermalink }}">← このシリーズを第1話から読む</a></div>
+    {{ end }}
+  {{ end }}
+{{ end }}
